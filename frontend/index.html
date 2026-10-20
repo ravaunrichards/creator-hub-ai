@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#10121a"><meta name="description" content="Creator Hub AI — your creative thinking partner.">
+  <title>Creator Hub AI</title><link rel="stylesheet" href="/styles.css"><script src="/app.js" defer></script>
+</head>
+<body>
+  <div class="app-shell" id="appShell">
+    <aside class="sidebar" id="sidebar" aria-label="Chat sidebar">
+      <div class="brand-row"><div class="brand-mark">✳</div><div class="brand-name">Creator Hub <span>AI</span></div><button class="icon-button mobile-close" id="closeSidebar" aria-label="Close sidebar">×</button></div>
+      <button class="new-chat" id="newChat"><span>＋</span> New chat <kbd>⌘ K</kbd></button>
+      <div class="side-label">YOUR SPACE</div>
+      <nav class="side-nav"><button class="nav-item active" id="chatsNav"><span>◷</span> Chats</button><button class="nav-item" id="exploreNav"><span>✧</span> Explore AI <small>Coming later</small></button></nav>
+      <div class="history-head"><span>RECENTS</span><button class="tiny-button" id="refreshChats" title="Refresh chats">↻</button></div>
+      <div class="conversation-list" id="conversationList"><div class="empty-side">Your conversations will appear here.</div></div>
+      <div class="sidebar-bottom"><div class="plan-note"><div class="plan-icon">✦</div><div><strong>Your ideas, in motion</strong><small>Built for your next big thing.</small></div></div><button class="account-button" id="accountButton"><div class="avatar" id="avatarInitial">C</div><div class="account-copy"><strong id="accountName">Creator Hub guest</strong><small id="accountEmail">Sign in to save chats</small></div><span class="account-more">•••</span></button></div>
+    </aside>
+    <div class="sidebar-scrim" id="sidebarScrim"></div>
+    <main class="main-area">
+      <header class="topbar"><button class="icon-button menu-button" id="openSidebar" aria-label="Open sidebar">☰</button><div class="mobile-brand"><span class="brand-mark small">✳</span> Creator Hub <b>AI</b></div><div class="model-select"><span class="status-dot"></span><span id="modelLabel">AI assistant</span><span class="chevron">⌄</span></div><div class="top-actions"><button class="icon-button" id="themeToggle" title="Toggle appearance" aria-label="Toggle appearance">◐</button><button class="signin-button" id="signinTop">Sign in</button></div></header>
+      <section class="conversation-stage" id="conversationStage">
+        <div class="welcome" id="welcome">
+          <div class="welcome-orb"><div class="orb-core">✳</div><div class="orb-ring ring-one"></div><div class="orb-ring ring-two"></div></div>
+          <p class="eyebrow">YOUR CREATIVE THINKING PARTNER</p><h1>What are we <span>creating</span> today?</h1><p class="welcome-sub">Ask a question, explore an idea, or turn a big goal into your next step.</p>
+          <div class="suggestion-grid"><button class="suggestion" data-prompt="Help me turn an idea into a clear step-by-step plan."><span class="suggestion-icon lavender">✧</span><span><strong>Make a plan</strong><small>Turn an idea into action</small></span><span class="suggestion-arrow">↗</span></button><button class="suggestion" data-prompt="Help me write something clear, professional, and engaging."><span class="suggestion-icon peach">✎</span><span><strong>Write with me</strong><small>Find the right words</small></span><span class="suggestion-arrow">↗</span></button><button class="suggestion" data-prompt="Help me debug code. Ask me for the code and explain the fix clearly."><span class="suggestion-icon blue">⌘</span><span><strong>Build something</strong><small>Code, apps, and websites</small></span><span class="suggestion-arrow">↗</span></button><button class="suggestion" data-prompt="Teach me a difficult topic in simple steps, with an example."><span class="suggestion-icon mint">◎</span><span><strong>Learn a topic</strong><small>Make the complex simple</small></span><span class="suggestion-arrow">↗</span></button></div>
+        </div>
+        <div class="messages" id="messages" aria-live="polite"></div>
+      </section>
+      <div class="composer-wrap"><form class="composer" id="chatForm"><textarea id="messageInput" rows="1" maxlength="12000" placeholder="Message Creator Hub AI…" aria-label="Message Creator Hub AI"></textarea><div class="composer-bottom"><div class="composer-tools"><button type="button" class="tool-button" id="attachButton" title="File analysis is not enabled yet" disabled>＋ <span>Attach</span></button><span class="tool-separator"></span><span class="secure-note"><span>◇</span> Private workspace</span></div><button class="send-button" id="sendButton" type="submit" aria-label="Send message"><span>↑</span></button></div></form><p class="disclaimer">Creator Hub AI can make mistakes. Check important information. <span id="providerStatus">AI connection requires setup.</span></p></div>
+    </main>
+  </div>
+  <div class="modal-backdrop" id="authModal" hidden><section class="modal" role="dialog" aria-modal="true" aria-labelledby="authTitle"><button class="modal-close" id="closeAuth" aria-label="Close">×</button><div class="modal-logo">✳</div><p class="eyebrow">WELCOME TO YOUR SPACE</p><h2 id="authTitle">Make room for big ideas.</h2><p class="modal-sub">Sign in to keep your conversations safe and available on your devices.</p><div class="auth-tabs"><button class="auth-tab active" data-mode="login">Sign in</button><button class="auth-tab" data-mode="register">Create account</button></div><form id="authForm"><label id="displayNameLabel" hidden>Display name<input id="displayName" autocomplete="name" maxlength="60" placeholder="Your name"></label><label>Email address<input id="authEmail" type="email" required autocomplete="email" maxlength="254" placeholder="you@example.com"></label><label>Password<input id="authPassword" type="password" required minlength="10" maxlength="128" autocomplete="current-password" placeholder="At least 10 characters"></label><p class="auth-error" id="authError" role="alert"></p><button class="primary-button" id="authSubmit" type="submit">Sign in</button></form><p class="auth-footnote">By continuing, you agree to use Creator Hub AI responsibly. Account recovery and email verification are not available in this first release.</p></section></div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body></html>
